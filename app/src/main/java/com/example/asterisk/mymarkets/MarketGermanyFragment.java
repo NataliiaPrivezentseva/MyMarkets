@@ -14,11 +14,6 @@ import java.util.ArrayList;
 public class MarketGermanyFragment extends Fragment {
 
     /**
-     * Tag for the log messages
-     */
-    public static final String LOG_TAG = MarketGermanyFragment.class.getSimpleName();
-
-    /**
      * URL for fetch information about markets in Germany
      */
     private static final String REQUEST_URL_DE =
@@ -44,7 +39,7 @@ public class MarketGermanyFragment extends Fragment {
         markets.add(new Market("dqqc4", "g1v88bf.t"));
 
         MarketAdapter adapter = new MarketAdapter(getActivity(), markets);
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
+        ListView listView = rootView.findViewById(R.id.list);
         listView.setAdapter(adapter);
 
         return rootView;

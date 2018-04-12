@@ -28,7 +28,9 @@ class CategoryAdapter extends FragmentPagerAdapter {
      * Return the {@link Fragment} that should be displayed for the given page number.
      */
     @Override
+    //TODO: Make a factory class
     public Fragment getItem(int position) {
+        //TODO: put them into array and retrieve by index
         if (position == 0) {
             return new MarketUKFragment();
         } else if (position == 1) {
