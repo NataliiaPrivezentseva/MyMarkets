@@ -10,8 +10,7 @@ public class MarketFragmentFactory {
 
     static {
         MARKETS_URLS = new LinkedHashMap<>();
-        MARKETS_URLS.put("UK", "https://api.ig.com/deal/samples/markets/ANDROID_PHONE/en_GB/igi2");
-        MARKETS_URLS.put("UK2", "https://api.ig.com/deal/samples/markets/ANDROID_PHONE/en_GB/igi");
+        MARKETS_URLS.put("UK", "https://api.ig.com/deal/samples/markets/ANDROID_PHONE/en_GB/igi");
         MARKETS_URLS.put("Germany", "https://api.ig.com/deal/samples/markets/ANDROID_PHONE/de_DE/dem");
         MARKETS_URLS.put("France", "https://api.ig.com/deal/samples/markets/ANDROID_PHONE/fr_FR/frm");
     }
