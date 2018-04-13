@@ -28,20 +28,30 @@ class CategoryAdapter extends FragmentPagerAdapter {
      * Return the {@link Fragment} that should be displayed for the given page number.
      */
     @Override
-    //TODO: Make a factory class
+//    public Fragment getItem(int position) {
+//        //TODO: put them into array and retrieve by index
+//        if (position == 0) {
+//            return new MarketUKFragment();
+//        } else if (position == 1) {
+//            return new MarketGermanyFragment();
+//        } else if (position == 2){
+//            return new MarketFranceFragment();
+//        } else {
+//            return new MarketUKFragment();
+//        }
+//    }
     public Fragment getItem(int position) {
         //TODO: put them into array and retrieve by index
         if (position == 0) {
-            return new MarketUKFragment();
+            return MarketFragmentFactory.getMarketFragment("UK");
         } else if (position == 1) {
-            return new MarketGermanyFragment();
+            return MarketFragmentFactory.getMarketFragment("Germany");
         } else if (position == 2){
-            return new MarketFranceFragment();
+            return MarketFragmentFactory.getMarketFragment("France");
         } else {
-            return new MarketUKFragment();
+            return MarketFragmentFactory.getMarketFragment("UK");
         }
     }
-
     /**
      * Return the total number of pages.
      */
@@ -50,6 +60,7 @@ class CategoryAdapter extends FragmentPagerAdapter {
         return 3;
     }
 
+    //todo сделать, чтобы брал названия из мапы
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {

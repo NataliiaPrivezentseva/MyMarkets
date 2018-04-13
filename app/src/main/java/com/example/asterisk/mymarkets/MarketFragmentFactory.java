@@ -1,5 +1,7 @@
 package com.example.asterisk.mymarkets;
 
+import android.os.Bundle;
+
 import java.util.HashMap;
 
 public class MarketFragmentFactory {
@@ -15,8 +17,13 @@ public class MarketFragmentFactory {
 
     public static MarketFragment getMarketFragment(String country){
         if (marketsUrls.containsKey(country)){
-            return new MarketFragment(marketsUrls.get(country));
+            MarketFragment marketFragment = new MarketFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString(MarketFragment.STRING_REQUEST_URL,marketsUrls.get(country));
+            marketFragment.setArguments(bundle);
+            return marketFragment;
         }
+        // exception
         return null;
     }
 
