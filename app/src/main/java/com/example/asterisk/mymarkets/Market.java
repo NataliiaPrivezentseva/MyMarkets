@@ -5,7 +5,7 @@ public class Market{
     private final String instrumentName;
     private final String displayOffer;
 
-    public Market(String instrumentName, String displayOffer) {
+    Market(String instrumentName, String displayOffer) {
         this.instrumentName = instrumentName;
         this.displayOffer = displayOffer;
     }

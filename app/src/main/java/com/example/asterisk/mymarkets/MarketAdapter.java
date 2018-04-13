@@ -33,11 +33,11 @@ public class MarketAdapter extends ArrayAdapter<Market> {
 
         //todo подумать о том, как предотворатить NPE
         TextView instrumentNameTextView =
-                (TextView) listItemView.findViewById(R.id.instrument_name_text_view);
+                listItemView.findViewById(R.id.instrument_name_text_view);
         instrumentNameTextView.setText(currentMarket.getInstrumentName());
 
         TextView displayOfferTextView =
-                (TextView) listItemView.findViewById(R.id.display_offer_text_view);
+                listItemView.findViewById(R.id.display_offer_text_view);
         displayOfferTextView.setText(currentMarket.getDisplayOffer());
 
         return listItemView;
