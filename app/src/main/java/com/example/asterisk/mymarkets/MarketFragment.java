@@ -17,6 +17,7 @@ public class MarketFragment extends Fragment{
     public static final String STRING_REQUEST_URL = "requestUrl";
 
     public MarketFragment() {
+        // Required empty public constructor
     }
 
     @Override
