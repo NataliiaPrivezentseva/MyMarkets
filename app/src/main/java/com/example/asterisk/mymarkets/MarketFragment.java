@@ -37,7 +37,7 @@ public class MarketFragment extends Fragment{
         // word_list.xml layout file.
         ListView listView = rootView.findViewById(R.id.list);
 
-        // Kick off an {@link AsyncTask} to perform the network request
+        // Initiate an {@link AsyncTask} to perform the network request
         FragmentAsyncTask task = new FragmentAsyncTask(listView, getActivity());
         task.execute(getArguments().getString(MarketFragment.STRING_REQUEST_URL));
 
