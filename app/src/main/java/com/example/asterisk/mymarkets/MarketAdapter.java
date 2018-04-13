@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class MarketAdapter extends ArrayAdapter<Market> {
 
-//todo либо убрать поле,либо добавить в конструктор и использовать
+    //todo think if we need this field
     private int mColorResourceId;
 
-    MarketAdapter(Context context, ArrayList<Market> words){
-        super(context, 0, words);
+    MarketAdapter(Context context, ArrayList<Market> markets){
+        super(context, 0, markets);
     }
 
     @NonNull
@@ -31,14 +31,15 @@ public class MarketAdapter extends ArrayAdapter<Market> {
 
         Market currentMarket = getItem(position);
 
-        //todo подумать о том, как предотворатить NPE
-        TextView instrumentNameTextView =
-                listItemView.findViewById(R.id.instrument_name_text_view);
-        instrumentNameTextView.setText(currentMarket.getInstrumentName());
+        if (currentMarket != null) {
+            TextView instrumentNameTextView =
+                    listItemView.findViewById(R.id.instrument_name_text_view);
+            instrumentNameTextView.setText(currentMarket.getInstrumentName());
 
-        TextView displayOfferTextView =
-                listItemView.findViewById(R.id.display_offer_text_view);
-        displayOfferTextView.setText(currentMarket.getDisplayOffer());
+            TextView displayOfferTextView =
+                    listItemView.findViewById(R.id.display_offer_text_view);
+            displayOfferTextView.setText(currentMarket.getDisplayOffer());
+        }
 
         return listItemView;
     }

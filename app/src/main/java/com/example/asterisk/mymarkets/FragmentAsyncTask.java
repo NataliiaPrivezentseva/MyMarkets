@@ -57,8 +57,13 @@ public class FragmentAsyncTask extends AsyncTask<String, Void, ArrayList<Market>
         }
 
         // Extract relevant fields from the JSON response,
-        // create and return an {@link ArrayList<Market>} object
-        return extractFeatureFromJson(jsonResponse);
+        // create and return an {@link ArrayList<Market>} object.
+        ArrayList<Market> markets = extractFeatureFromJson(jsonResponse);
+        // If there is no proper response, then create an empty list of markets.
+        if (markets == null){
+            markets = new ArrayList<>();
+        }
+        return markets;
     }
 
     @Override
@@ -101,18 +106,16 @@ public class FragmentAsyncTask extends AsyncTask<String, Void, ArrayList<Market>
                 Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem retrieving the earthquake JSON results.", e);
+            Log.e(LOG_TAG, "Problem retrieving the JSON results.", e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
             }
             if (inputStream != null) {
-                // function must handle java.io.IOException here
                 inputStream.close();
             }
         }
         return jsonResponse;
-
     }
 
     /**
@@ -122,6 +125,7 @@ public class FragmentAsyncTask extends AsyncTask<String, Void, ArrayList<Market>
     private ArrayList<Market> extractFeatureFromJson(String jsonResponse) {
         // If the JSON string is empty or null, then return early.
         if (TextUtils.isEmpty(jsonResponse)) {
+            Log.e(LOG_TAG, "We've got no jsonResponse");
             return null;
         }
 
@@ -144,15 +148,13 @@ public class FragmentAsyncTask extends AsyncTask<String, Void, ArrayList<Market>
                             (marketObject.getString("instrumentName"),
                                     marketObject.getString("displayOffer")));
                 }
-
                 Collections.sort(markets, new MarketInstrumentNameComparator());
-
                 return markets;
             }
         } catch (JSONException e) {
             Log.e(LOG_TAG, "Problem parsing the earthquake JSON results", e);
         }
-        return null;
+        return markets;
     }
 
     /**
