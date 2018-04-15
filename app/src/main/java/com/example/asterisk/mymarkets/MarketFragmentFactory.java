@@ -8,6 +8,8 @@ public class MarketFragmentFactory {
 
     static final LinkedHashMap<String, String> MARKETS_URLS;
 
+    // Here we can add new pairs of country and link for its markets and it will be shown
+    // in a new tab automatically.
     static {
         MARKETS_URLS = new LinkedHashMap<>();
         MARKETS_URLS.put("UK", "https://api.ig.com/deal/samples/markets/ANDROID_PHONE/en_GB/igi");
