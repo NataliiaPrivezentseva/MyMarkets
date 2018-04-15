@@ -13,9 +13,6 @@ import java.util.ArrayList;
 
 public class MarketAdapter extends ArrayAdapter<Market> {
 
-    //todo think if we need this field
-    private int mColorResourceId;
-
     MarketAdapter(Context context, ArrayList<Market> markets){
         super(context, 0, markets);
     }

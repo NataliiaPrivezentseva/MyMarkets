@@ -14,9 +14,7 @@
         android:layout_marginStart="@dimen/text_view_indent"
         android:layout_weight="1"
         android:gravity="start|center_vertical"
-        android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="@android:color/black"
-        android:textStyle="bold|italic"
+        style="@style/MarketNameTextAppearance"
         tools:text="market_name" />
 
     <TextView
@@ -28,9 +26,7 @@
         android:layout_marginRight="@dimen/text_view_indent"
         android:layout_weight="1"
         android:gravity="end|center_vertical"
-        android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="@android:color/black"
-        android:textStyle="bold|italic"
+        style="@style/OfferTextAppearance"
         tools:text="offer" />
 
 </LinearLayout>

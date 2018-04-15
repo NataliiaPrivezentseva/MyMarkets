@@ -2,4 +2,5 @@
 <resources>
     <dimen name="list_item_height">72dp</dimen>
     <dimen name="text_view_indent">16dp</dimen>
+    <dimen name="text_size">20sp</dimen>
 </resources>
